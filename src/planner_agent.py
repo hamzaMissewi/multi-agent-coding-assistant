@@ -4,7 +4,8 @@ from enum import Enum
 import json
 import re
 from langchain_groq import ChatGroq
-from langchain.schema import HumanMessage, SystemMessage
+# from langchain.schema import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, SystemMessage
 from config import Config
 
 class ProjectType(Enum):

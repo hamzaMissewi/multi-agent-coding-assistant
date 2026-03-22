@@ -6,10 +6,11 @@ import os
 import re
 import time
 from langchain_groq import ChatGroq
-from langchain.schema import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, SystemMessage
 from config import Config
-from src.architect_agent import FileTask, TaskType, ArchitecturePlan
-from src.planner_agent import ProjectPlan, ProjectType
+# from src.architect_agent import FileTask, TaskType, ArchitecturePlan
+from src.architect_agent import FileTask, ArchitecturePlan
+from src.planner_agent import ProjectPlan #ProjectType
 
 class CodeQuality(Enum):
     EXCELLENT = "excellent"

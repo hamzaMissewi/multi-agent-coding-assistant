@@ -254,7 +254,7 @@ def render_generation_results(result: WorkflowResult):
         col1, col2, col3 = st.columns([1, 1, 1])
         
         with col1:
-            if st.button("📦 Download ZIP", type="secondary"):
+            if st.button("📦 Download ZIP", type="secondary", key="download_zip_main"):
                 zip_data = create_project_zip(result.project_path)
                 if zip_data:
                     st.download_button(
@@ -265,11 +265,11 @@ def render_generation_results(result: WorkflowResult):
                     )
         
         with col2:
-            if st.button("📂 Open Folder", type="secondary"):
+            if st.button("📂 Open Folder", type="secondary", key="open_folder_main"):
                 st.info(f"Project location: `{result.project_path}`")
         
         with col3:
-            if st.button("🔄 Regenerate", type="secondary"):
+            if st.button("🔄 Regenerate", type="secondary", key="regenerate_main"):
                 st.session_state.current_result = None
                 st.rerun()
     
